@@ -107,7 +107,7 @@ router.put('/:id', (req, res, next) => {
 router.delete('/:id', (req, res, next) => {
     const id = req.params.id
     tweets = tweets.filter((tweet) => tweet.id !== id)
-    res.status(200).json(tweets)
+    res.status(200).json(tweets)    // 204 는 삭제되면 다른 내용은 안 나옴 
 })
 
 
