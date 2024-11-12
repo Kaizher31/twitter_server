@@ -52,13 +52,29 @@ export async function getById(id) {
 
 // 트윗을 작성
 export async function create(username, name, text) {
+    const now = new Date();  
+
+    const formattedDate = now.getFullYear() + '-' +
+        String(now.getMonth() + 1).padStart(2, '0') + '-' +  
+        String(now.getDate()).padStart(2, '0') + ' ' +     
+        String(now.getHours()).padStart(2, '0') + ':' +    
+        String(now.getMinutes()).padStart(2, '0') + ':' +  
+        String(now.getSeconds()).padStart(2, '0');         
+
     const tweet = {
-        id:'5',
+        id: '5',
         username: username,
         name: name,
         text: text,
-        createdAt: Date.now().toString()
+        createdAt: formattedDate  
     }
+    // const tweet = {
+    //     id:'5',
+    //     username: username,
+    //     name: name,
+    //     text: text,
+    //     createdAt: Date.now().toString()
+    // }
     tweets = [tweet, ...tweets]
     return tweet
 }

@@ -1,4 +1,3 @@
-import { name } from "ejs"
 import express from "express"
 import * as tweetController from '../controller/tweet.js'
 
