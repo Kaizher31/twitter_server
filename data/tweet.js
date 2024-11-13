@@ -1,35 +1,27 @@
 let tweets = [
     {
         id: '1',
-        name: '설윤',
-        username: 'NMixx',
+        userId: '1',
         text: '안녕하세요',
-        createdAt: Date.now().toString(),
-        url: 'https://sungyesa.com/new/data/file/free/2950632301_YpCvzx1S_23ffsdsdfsdfsdf.jpg'
+        createdAt: Date.now().toString()
     },
     {
         id: '2',
-        name: '카리나',
-        username: 'Karina',
+        userId: '2',
         text: 'Hello 트윗 여러분',
-        createdAt: Date.now().toString(),
-        url: 'https://i.namu.wiki/i/pKp6bM6ovVkqzTlwj5lkWjCfyLCITAU3bP5chwJc7TcsgEh9dJxNGbAUfnTTlFsjAzmIG586bMk56Oa5OgHEZw.webp'
+        createdAt: Date.now().toString()
     },
     {
         id: '3',
-        name: '장원영',
-        username: 'IVE',
+        userId: '1',
         text: '첫 트윗',
-        createdAt: Date.now().toString(),
-        url: 'https://www.cosinkorea.com/data/photos/20240414/art_17120529936565_2a8f34.jpg'
+        createdAt: Date.now().toString()
     },
     {
         id: '4',
-        name: '미연',
-        username: 'I-DLE',
+        userId: '4',
         text: '회사 차리자',
-        createdAt: Date.now().toString(),
-        url: 'https://pimg.mk.co.kr/news/cms/202411/08/news-p.v1.20241108.2222bad919ff477a9691265e943ce110_P1.png'
+        createdAt: Date.now().toString()
     }
 ]
 
