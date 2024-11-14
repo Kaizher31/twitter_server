@@ -35,7 +35,7 @@ export async function createUser(username, password, name, email) {
         email,
         url: 'https://domf5oio6qrcr.cloudfront.net/medialibrary/6372/202ebeef-6657-44ec-8fff-28352e1f5999.jpg'
     }
-    users = [user, ...users]
+    users = [user, ...users] // 기존 users 배열 앞에 새 user 객체를 추가하는 방법
     return user
 }
 
