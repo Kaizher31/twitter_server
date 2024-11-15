@@ -2,18 +2,18 @@ import { Server } from "socket.io";
 import jwt from 'jsonwebtoken'
 import { config } from "../config.js";
 
-class Socket{
+class Socket {
     constructor(server){
         this.io = new Server(server, {
             cors: {
-                origin: '*' // 서로다른 port는 블록킹 시키는것을 막음
+                origin: '*' // 서로다른 port는 블록킹 시키는것을 막음(모든 출처에서 요청 허용)
             }
         })
 
-        this.io.use((socket, next) =>{
+        this.io.use((socket, next) => {
             const token = socket.handshake.auth.token
             if(!token){
-                return next(new Error('인증 에러'))
+                return next(new Error('인증 에러!'))
             }
             jwt.verify(token, config.jwt.secretKey, (error, decoded) => {
                 if(error){

@@ -1,9 +1,10 @@
 import jwt from 'jsonwebtoken'
 import * as authRepository from '../data/auth.js'
+import { config } from '../config.js'
 
 const AUTH_ERROR = {message: '인증에러'}
 
-export const isAuth = async(req, res, next)=>{
+export const isAuth = async(req, res, next) => {
     const authHeader = req.get('Authorization')
     console.log(authHeader)
 
@@ -14,7 +15,7 @@ export const isAuth = async(req, res, next)=>{
     const token = authHeader.split(' ')[1]
 
     jwt.verify(
-        token, 'abcdefg1234%^&*', async(error, decoded) => {
+        token, config.jwt.secretKey, async(error, decoded) => {
             if(error){
                 console.log('토큰 에러')
                 return res.status(401).json(AUTH_ERROR)
@@ -29,5 +30,3 @@ export const isAuth = async(req, res, next)=>{
         }
     )
 }
-
-// Authorization: Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQiLCJpYXQiOjE3MzE0NzUwNjMsImV4cCI6MTczMTY0Nzg2M30.9OEIu05iZ7mV6UMhlwgg_NCg4xT07il_rNQEu8xGeiQ"  이렇게 전달

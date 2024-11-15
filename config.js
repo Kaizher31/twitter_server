@@ -5,10 +5,11 @@ dotenv.config()
 function required(key, defaultValue=undefined){
     const value = process.env[key] || defaultValue
     if(value == null){
-        throw new Error(`키 ${key}는 undefined!`)
+        throw new Error(`키 ${key}는 undefined!!`)
     }
     return value
 }
+
 
 export const config = {
     jwt: {
@@ -20,5 +21,12 @@ export const config = {
     },
     host: {
         port: parseInt(required('HOST_PORT', 8080))
+    },
+    db: {
+        host: required('DB_HOST'),
+        user: required('DB_USER'),
+        password: required('DB_PASSWORD'),
+        database: required('DB_DATABASE'),
+        port: required('DB_PORT')
     }
 }
